@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "Postgres2025!"
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
